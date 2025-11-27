@@ -1,0 +1,627 @@
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1
+2025-11-27 21:31 +00:00: /workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96
+2025-11-27 21:31 +00:00:             throw new PathError(`Missing parameter name at index ${index}`, str);
+2025-11-27 21:31 +00:00:                   ^
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+2025-11-27 21:31 +00:00:     at name (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:96:19)
+2025-11-27 21:31 +00:00:     at parse (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:113:68)
+2025-11-27 21:31 +00:00:     at pathToRegexp (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:267:58)
+2025-11-27 21:31 +00:00:     at Object.match (/workspaces/Khalifa-Mgmt/node_modules/path-to-regexp/dist/index.js:237:30)
+2025-11-27 21:31 +00:00:     at matcher (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:86:23)
+2025-11-27 21:31 +00:00:     at new Layer (/workspaces/Khalifa-Mgmt/node_modules/router/lib/layer.js:93:62)
+2025-11-27 21:31 +00:00:     at Function.route (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:428:17)
+2025-11-27 21:31 +00:00:     at Router.<computed> [as all] (/workspaces/Khalifa-Mgmt/node_modules/router/index.js:447:24)
+2025-11-27 21:31 +00:00:     at file:///workspaces/Khalifa-Mgmt/routes/opensign.js:14:8
+2025-11-27 21:31 +00:00:     at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+2025-11-27 21:31 +00:00:   originalPath: '/*'
+2025-11-27 21:31 +00:00: }
+2025-11-27 21:31 +00:00: 
+2025-11-27 21:31 +00:00: Node.js v22.21.1

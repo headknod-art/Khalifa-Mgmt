@@ -1,0 +1,5 @@
+nohup: ignoring input
+
+> hkmsp-frontend@0.1.0 dev
+> npm-run-all --parallel dev:backend dev:frontend
+

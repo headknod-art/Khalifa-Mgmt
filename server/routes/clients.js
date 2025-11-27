@@ -1,5 +1,6 @@
+
 import express from 'express';
-import db from '../server/db.js';
+import db from '../db.js';
 const router = express.Router();
 
 // Get all clients

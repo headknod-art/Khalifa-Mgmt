@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 // Placeholder route
@@ -6,4 +6,4 @@ router.get('/', (req, res) => {
   res.json({ message: 'Remote route placeholder' });
 });
 
-module.exports = router;
+export default router;

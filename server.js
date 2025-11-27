@@ -1,8 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
-const rateLimit = require('express-rate-limit');
+
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import rateLimit from 'express-rate-limit';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -54,15 +60,15 @@ app.get('/api/test', (req, res) => {
   });
 });
 
-// Import routes
-const authRoutes = require('./routes/auth');
-const ticketRoutes = require('./routes/tickets');
-const clientRoutes = require('./routes/clients');
-const contactRoutes = require('./routes/contacts');
-const remoteRoutes = require('./routes/remote');
-const videoRoutes = require('./routes/video');
-const assetRoutes = require('./routes/assets');
-const rustdeskRoutes = require('./routes/rustdesk');
+
+import authRoutes from './routes/auth.js';
+import ticketRoutes from './routes/tickets.js';
+import clientRoutes from './routes/clients.js';
+import contactRoutes from './routes/contacts.js';
+import remoteRoutes from './routes/remote.js';
+import videoRoutes from './routes/video.js';
+import assetRoutes from './routes/assets.js';
+import rustdeskRoutes from './routes/rustdesk.js';
 
 // Apply rate limiting to API routes (but not health endpoint)
 app.use('/api/v1/', limiter);
@@ -106,4 +112,4 @@ app.listen(PORT, () => {
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
-module.exports = app;
+export default app;
