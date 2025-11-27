@@ -13,7 +13,7 @@ export default function Dashboard() {
         </div>
 
         {/* KPI Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 justify-items-start">
           <KPICard
             title="Assets Under Management"
             value="$45.2M"
@@ -47,7 +47,7 @@ export default function Dashboard() {
         </div>
 
         {/* Performance Metrics */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 justify-items-start">
           {/* Portfolio Performance */}
           <div className="bg-card border border-border rounded-lg p-8 shadow-card hover:shadow-card-hover transition-all">
             <h2 className="text-xl font-semibold text-foreground mb-6">Portfolio Performance</h2>

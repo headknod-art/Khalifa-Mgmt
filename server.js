@@ -58,11 +58,11 @@ app.get('/api/test', (req, res) => {
 const authRoutes = require('./routes/auth');
 const ticketRoutes = require('./routes/tickets');
 const clientRoutes = require('./routes/clients');
-const contactRoutes = require('../routes/contacts');
+const contactRoutes = require('./routes/contacts');
 const remoteRoutes = require('./routes/remote');
 const videoRoutes = require('./routes/video');
 const assetRoutes = require('./routes/assets');
-const rustdeskRoutes = require('../routes/rustdesk');
+const rustdeskRoutes = require('./routes/rustdesk');
 
 // Apply rate limiting to API routes (but not health endpoint)
 app.use('/api/v1/', limiter);

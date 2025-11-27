@@ -5,11 +5,24 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Dashboard from "./pages/Dashboard";
+import Clients from "@/pages/Clients";
+import Assets from "@/pages/Assets";
+import Services from "@/pages/Services";
+import Reports from "@/pages/Reports";
+import Documents from "@/pages/Documents";
+import Settings from "@/pages/Settings";
+import Sidebar from "@/components/Sidebar";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Dashboard} />
+      <Route path="/" component={Dashboard} />
+      <Route path="/clients" component={Clients} />
+      <Route path="/assets" component={Assets} />
+      <Route path="/services" component={Services} />
+      <Route path="/reports" component={Reports} />
+      <Route path="/documents" component={Documents} />
+      <Route path="/settings" component={Settings} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -22,19 +35,24 @@ function Router() {
 //   to keep consistent foreground/background color across components
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
-function App() {
+function KhalifaMgmt() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="dark"
-      >
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className="flex h-screen bg-background text-foreground">
+            <Sidebar />
+            <main className="flex-1 overflow-auto ml-64 transition-all duration-300">
+              <div className="min-h-screen bg-gradient-to-br from-background via-background to-card/30">
+                <Router />
+              </div>
+            </main>
+          </div>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
 }
 
-export default App;
+export default KhalifaMgmt;

@@ -32,30 +32,30 @@ export default function KPICard({
 
   return (
     <div
-      className={`relative p-6 rounded-lg border backdrop-blur-sm transition-all duration-300 hover:shadow-card-hover ${colorClass}`}
+      className={`relative p-8 rounded-2xl border shadow-lg bg-card/90 backdrop-blur-md ${colorClass}`}
     >
       {/* Header with icon and title */}
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-6">
         <div className="flex-1">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
+          <p className="text-base font-semibold text-muted-foreground uppercase tracking-widest font-display">
             {title}
           </p>
         </div>
-        {icon && <div className="text-2xl opacity-60">{icon}</div>}
+        {icon && <div className="text-3xl opacity-70 drop-shadow-sm">{icon}</div>}
       </div>
 
       {/* Main value */}
-      <div className="mb-4">
-        <p className="text-3xl font-bold text-foreground">{value}</p>
+      <div className="mb-6">
+        <p className="text-4xl font-extrabold text-foreground font-display tracking-tight">{value}</p>
       </div>
 
       {/* Sparkline visualization */}
       {sparkline.length > 0 && (
-        <div className="mb-3 h-8 flex items-end gap-1">
+        <div className="mb-4 h-8 flex items-end gap-1">
           {sparkline.map((val, idx) => (
             <div
               key={idx}
-              className={`flex-1 rounded-sm opacity-40 transition-opacity hover:opacity-70 ${
+              className={`flex-1 rounded-full opacity-50 ${
                 color === "primary"
                   ? "bg-primary"
                   : color === "secondary"
@@ -72,14 +72,14 @@ export default function KPICard({
 
       {/* Trend indicator */}
       {trend && (
-        <div className="flex items-center gap-1 text-sm">
+        <div className="flex items-center gap-2 text-base mt-2">
           {trend.direction === "up" ? (
-            <TrendingUp className="w-4 h-4 text-success" />
+            <TrendingUp className="w-5 h-5 text-success" />
           ) : (
-            <TrendingDown className="w-4 h-4 text-warning" />
+            <TrendingDown className="w-5 h-5 text-warning" />
           )}
           <span
-            className={trend.direction === "up" ? "text-success" : "text-warning"}
+            className={trend.direction === "up" ? "text-success font-semibold" : "text-warning font-semibold"}
           >
             {trend.direction === "up" ? "+" : ""}
             {trend.value}%

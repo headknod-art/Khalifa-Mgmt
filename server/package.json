@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/express": "^5.0.5",
+    "@types/supertest": "^6.0.3",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "supertest": "^7.1.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/multer": "^2.0.0",
+    "ts-jest": "^29.4.5"
+  }
+}
