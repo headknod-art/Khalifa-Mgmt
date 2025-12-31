@@ -1,0 +1,427 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import {
+    Box,
+    Button,
+    TextField,
+    RadioGroup,
+    FormControlLabel,
+    Radio,
+    Checkbox,
+    FormGroup,
+    FormControl,
+    FormLabel,
+    Paper,
+    Typography,
+    Grid,
+    IconButton,
+    Select,
+    MenuItem,
+    InputLabel
+} from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+
+// Aggressive sanitization - converts ANY non-primitive to string
+const sanitize = (val) => {
+    if (val === null || val === undefined) return '';
+    const type = typeof val;
+    if (type === 'string' || type === 'number' || type === 'boolean') return String(val);
+    // Anything else (objects, functions, etc.) becomes empty string
+    if (type === 'object') {
+        // Log objects for debugging
+        if (val.$$typeof) {
+            console.error('SANITIZE: Found React element where text expected:', val.type);
+        }
+        return '';
+    }
+    return '';
+};
+
+const DynamicForm = ({ config: rawConfig, onSubmit }) => {
+    const [formData, setFormData] = useState({});
+    const [repeatableSections, setRepeatableSections] = useState({});
+    const [renderError, setRenderError] = useState(null);
+
+    // Sanitize entire config on mount
+    const config = useMemo(() => {
+        try {
+            if (!Array.isArray(rawConfig)) {
+                console.error('Config is not an array:', typeof rawConfig);
+                return [];
+            }
+
+            return rawConfig.map(section => {
+                if (!section || typeof section !== 'object') return null;
+
+                return {
+                    sectionTitle: sanitize(section.sectionTitle),
+                    description: sanitize(section.description),
+                    repeatable: !!section.repeatable,
+                    maxInstances: section.maxInstances,
+                    fields: Array.isArray(section.fields) ? section.fields.map(field => {
+                        if (!field || typeof field !== 'object') return null;
+
+                        return {
+                            name: sanitize(field.name),
+                            label: sanitize(field.label),
+                            type: sanitize(field.type),
+                            description: sanitize(field.description),
+                            value: sanitize(field.value),
+                            options: Array.isArray(field.options) ? field.options.map(opt => {
+                                if (!opt || typeof opt !== 'object') return null;
+                                return {
+                                    value: sanitize(opt.value),
+                                    label: sanitize(opt.label)
+                                };
+                            }).filter(Boolean) : [],
+                            dependency: field.dependency ? {
+                                field: sanitize(field.dependency.field),
+                                value: sanitize(field.dependency.value),
+                                values: Array.isArray(field.dependency.values) ? 
+                                    field.dependency.values.map(sanitize) : undefined
+                            } : null
+                        };
+                    }).filter(Boolean) : []
+                };
+            }).filter(Boolean);
+        } catch (e) {
+            console.error('Error sanitizing config:', e);
+            setRenderError(String(e.message));
+            return [];
+        }
+    }, [rawConfig]);
+
+    useEffect(() => {
+        const initialRepeatable = {};
+        config.forEach(section => {
+            if (section && section.repeatable) {
+                initialRepeatable[section.sectionTitle] = 1;
+            }
+        });
+        setRepeatableSections(initialRepeatable);
+    }, [config]);
+
+    const handleChange = (e, sectionTitle, index = null) => {
+        const { name, value, type, checked } = e.target;
+        const fieldValue = type === 'checkbox' ? checked : value;
+
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            if (index !== null) {
+                if (!newData[sectionTitle]) {
+                    newData[sectionTitle] = [];
+                }
+                if (!newData[sectionTitle][index]) {
+                    newData[sectionTitle][index] = {};
+                }
+                newData[sectionTitle][index][name] = fieldValue;
+            } else {
+                newData[name] = fieldValue;
+            }
+            return newData;
+        });
+    };
+
+    const handleCheckboxChange = (e, fieldName, optionValue, sectionTitle, index = null) => {
+        const { checked } = e.target;
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            let targetArray;
+
+            if (index !== null) {
+                if (!newData[sectionTitle]) newData[sectionTitle] = [];
+                if (!newData[sectionTitle][index]) newData[sectionTitle][index] = {};
+                if (!newData[sectionTitle][index][fieldName]) newData[sectionTitle][index][fieldName] = [];
+                targetArray = newData[sectionTitle][index][fieldName];
+            } else {
+                if (!newData[fieldName]) newData[fieldName] = [];
+                targetArray = newData[fieldName];
+            }
+
+            if (checked) {
+                if (!targetArray.includes(optionValue)) {
+                    targetArray.push(optionValue);
+                }
+            } else {
+                const idx = targetArray.indexOf(optionValue);
+                if (idx > -1) {
+                    targetArray.splice(idx, 1);
+                }
+            }
+            return newData;
+        });
+    };
+
+    const addRepeatableSection = (sectionTitle) => {
+        setRepeatableSections(prev => ({
+            ...prev,
+            [sectionTitle]: (prev[sectionTitle] || 0) + 1
+        }));
+    };
+
+    const removeRepeatableSection = (sectionTitle) => {
+        let newCount;
+        setRepeatableSections(prev => {
+            newCount = Math.max(1, (prev[sectionTitle] || 0) - 1);
+            return {
+                ...prev,
+                [sectionTitle]: newCount
+            };
+        });
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            if (newData[sectionTitle] && newData[sectionTitle].length > newCount) {
+                newData[sectionTitle].pop();
+            }
+            return newData;
+        });
+    };
+
+    const isFieldVisible = (field, currentFormData, sectionTitle = null, index = null) => {
+        if (!field || !field.dependency) return true;
+
+        const { field: depField, value: depValue, values: depValues } = field.dependency;
+        let dependentFieldValue;
+
+        if (sectionTitle !== null && index !== null) {
+            dependentFieldValue = (currentFormData[sectionTitle]?.[index] || {})[depField];
+        } else {
+            dependentFieldValue = currentFormData[depField];
+        }
+
+        if (depValues && Array.isArray(depValues)) {
+            return depValues.includes(dependentFieldValue);
+        }
+        return dependentFieldValue === depValue;
+    };
+
+    const renderField = (field, sectionTitle, index = null) => {
+        try {
+            if (!field || !field.name) return null;
+
+            let value = '';
+            if (index !== null) {
+                value = (formData[sectionTitle]?.[index] || {})[field.name] || '';
+            } else {
+                value = formData[field.name] || '';
+            }
+
+            if (!isFieldVisible(field, formData, sectionTitle, index)) {
+                return null;
+            }
+
+            const fieldName = field.name;
+            const fieldType = String(field.type || '').toLowerCase();
+            const label = field.label;
+            const helperText = field.description;
+            const options = field.options || [];
+
+            switch (fieldType) {
+                case 'text':
+                case 'number':
+                case 'tel':
+                case 'date':
+                case 'email':
+                    return (
+                        <TextField
+                            key={fieldName}
+                            label={label}
+                            type={fieldType}
+                            name={fieldName}
+                            value={value}
+                            onChange={(e) => handleChange(e, sectionTitle, index)}
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={fieldType === 'date' ? { shrink: true } : {}}
+                            helperText={helperText}
+                        />
+                    );
+
+                case 'textarea':
+                    return (
+                        <TextField
+                            key={fieldName}
+                            label={label}
+                            name={fieldName}
+                            value={value}
+                            onChange={(e) => handleChange(e, sectionTitle, index)}
+                            fullWidth
+                            margin="normal"
+                            multiline
+                            rows={4}
+                            helperText={helperText}
+                        />
+                    );
+
+                case 'radio':
+                    return (
+                        <FormControl component="fieldset" margin="normal" fullWidth key={fieldName}>
+                            <FormLabel component="legend">{label}</FormLabel>
+                            <RadioGroup
+                                row
+                                name={fieldName}
+                                value={value}
+                                onChange={(e) => handleChange(e, sectionTitle, index)}
+                            >
+                                {options.map((option, idx) => (
+                                    <FormControlLabel
+                                        key={`${fieldName}-${idx}`}
+                                        value={option.value}
+                                        control={<Radio />}
+                                        label={option.label}
+                                    />
+                                ))}
+                            </RadioGroup>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                case 'checkbox':
+                    return (
+                        <FormControl component="fieldset" margin="normal" fullWidth key={fieldName}>
+                            <FormLabel component="legend">{label}</FormLabel>
+                            <FormGroup row>
+                                {options.map((option, idx) => (
+                                    <FormControlLabel
+                                        key={`${fieldName}-${idx}`}
+                                        control={
+                                            <Checkbox
+                                                checked={(index !== null
+                                                    ? (formData[sectionTitle]?.[index]?.[fieldName] || [])
+                                                    : (formData[fieldName] || [])).includes(option.value)}
+                                                onChange={(e) => handleCheckboxChange(e, fieldName, option.value, sectionTitle, index)}
+                                                name={fieldName}
+                                            />
+                                        }
+                                        label={option.label}
+                                    />
+                                ))}
+                            </FormGroup>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                case 'select':
+                    return (
+                        <FormControl fullWidth margin="normal" key={fieldName}>
+                            <InputLabel>{label}</InputLabel>
+                            <Select
+                                name={fieldName}
+                                value={value}
+                                label={label}
+                                onChange={(e) => handleChange(e, sectionTitle, index)}
+                            >
+                                {options.map((option, idx) => (
+                                    <MenuItem key={`${fieldName}-${idx}`} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                default:
+                    return null;
+            }
+        } catch (error) {
+            console.error('Error rendering field:', fieldName, error);
+            return null;
+        }
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(formData);
+    };
+
+    if (renderError) {
+        return (
+            <Box sx={{ p: 3, backgroundColor: '#ffebee', borderRadius: 1 }}>
+                <Typography color="error" variant="h6">Error preparing form</Typography>
+                <Typography color="error" variant="body2">{renderError}</Typography>
+            </Box>
+        );
+    }
+
+    if (!Array.isArray(config) || config.length === 0) {
+        return <Typography color="error">No form configuration available</Typography>;
+    }
+
+    return (
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            {config.map(section => {
+                if (!section) return null;
+
+                return (
+                    <Paper elevation={2} sx={{ p: 3, mb: 4 }} key={section.sectionTitle}>
+                        <Typography variant="h5" gutterBottom sx={{ mb: 1 }}>
+                            {section.sectionTitle}
+                        </Typography>
+                        {section.description && (
+                            <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
+                                {section.description}
+                            </Typography>
+                        )}
+
+                        {section.repeatable ? (
+                            [...Array(repeatableSections[section.sectionTitle] || 0)].map((_, index) => (
+                                <Box key={`${section.sectionTitle}-${index}`} sx={{ mb: 3, p: 2, border: '1px solid #eee', borderRadius: '4px' }}>
+                                    <Grid container spacing={2} alignItems="center">
+                                        <Grid item xs>
+                                            <Typography variant="h6" color="primary">
+                                                {section.sectionTitle} {index + 1}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <IconButton
+                                                color="error"
+                                                onClick={() => removeRepeatableSection(section.sectionTitle)}
+                                                disabled={repeatableSections[section.sectionTitle] <= 1}
+                                            >
+                                                <RemoveIcon />
+                                            </IconButton>
+                                            {(section.maxInstances === undefined || repeatableSections[section.sectionTitle] < section.maxInstances) && (
+                                                <IconButton color="primary" onClick={() => addRepeatableSection(section.sectionTitle)}>
+                                                    <AddIcon />
+                                                </IconButton>
+                                            )}
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container spacing={2}>
+                                        {section.fields.map(field => {
+                                            const rendered = renderField(field, section.sectionTitle, index);
+                                            if (!rendered) return null;
+                                            return (
+                                                <Grid item xs={12} sm={field.type === 'textarea' ? 12 : 6} key={field.name}>
+                                                    {rendered}
+                                                </Grid>
+                                            );
+                                        })}
+                                    </Grid>
+                                </Box>
+                            ))
+                        ) : (
+                            <Grid container spacing={2}>
+                                {section.fields.map(field => {
+                                    const rendered = renderField(field);
+                                    if (!rendered) return null;
+                                    return (
+                                        <Grid item xs={12} sm={field.type === 'textarea' ? 12 : 6} key={field.name}>
+                                            {rendered}
+                                        </Grid>
+                                    );
+                                })}
+                            </Grid>
+                        )}
+                    </Paper>
+                );
+            })}
+            <Button type="submit" variant="contained" color="primary" sx={{ mt: 3 }}>
+                Submit Intake Form
+            </Button>
+        </Box>
+    );
+};
+
+export default DynamicForm;

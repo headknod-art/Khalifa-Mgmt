@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  intake-mongo:
+    image: mongo:latest
+    container_name: intake-form-app-mongo
+    ports:
+      - "27019:27017"
+    volumes:
+      - intake-mongo-data:/data/db
+    networks:
+      - intake-network
+    restart: unless-stopped
+    healthcheck:
+      test: mongosh --eval 'db.adminCommand("ping")'
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  intake-backend:
+    build: ./backend
+    container_name: intake-form-app-backend
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./backend/intake.db:/usr/src/app/intake.db
+    networks:
+      - intake-network
+    environment:
+      - MONGODB_URI=mongodb://intake-mongo:27017/khalifa_intake
+      - PORT=5000
+      - NODE_ENV=production
+      - CORS_ORIGIN=http://localhost:3006
+      - KHALIFA_MGMT_API_URL=http://host.docker.internal:3005
+      - KHALIFA_API_KEY=dev_api_key_12345
+    depends_on:
+      intake-mongo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  intake-frontend:
+    build: ./frontend
+    container_name: intake-form-app-frontend
+    ports:
+      - "3006:3000"
+    depends_on:
+      - intake-backend
+    networks:
+      - intake-network
+    environment:
+      - WATCHPACK_POLLING=true
+      - REACT_APP_API_URL=http://localhost:5001
+    restart: unless-stopped
+
+networks:
+  intake-network:
+    driver: bridge
+
+volumes:
+  intake-mongo-data:

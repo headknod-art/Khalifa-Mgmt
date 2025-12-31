@@ -1,0 +1,92 @@
+import React, { useState, useEffect } from 'react';
+import { Box, Button, TextField, Paper, Typography, Grid } from '@mui/material';
+
+const DynamicForm = ({ config, onSubmit }) => {
+    const [formData, setFormData] = useState({});
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(formData);
+    };
+
+    // Validate config
+    if (!Array.isArray(config)) {
+        return <Typography color="error">Error: config is not an array</Typography>;
+    }
+
+    if (config.length === 0) {
+        return <Typography color="error">Error: config is empty</Typography>;
+    }
+
+    return (
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            {config.map((section, sIdx) => {
+                try {
+                    // Ensure section is safe
+                    if (!section || typeof section !== 'object') {
+                        return <Typography key={sIdx} color="error">Invalid section at {sIdx}</Typography>;
+                    }
+
+                    const sectionTitle = String(section.sectionTitle || `Section ${sIdx}`);
+                    const fields = Array.isArray(section.fields) ? section.fields : [];
+
+                    return (
+                        <Paper elevation={2} sx={{ p: 3, mb: 4 }} key={sectionTitle}>
+                            <Typography variant="h5" gutterBottom>
+                                {sectionTitle}
+                            </Typography>
+
+                            <Grid container spacing={2}>
+                                {fields.map((field, fIdx) => {
+                                    try {
+                                        if (!field || typeof field !== 'object') {
+                                            return null;
+                                        }
+
+                                        const fieldName = String(field.name || `field-${fIdx}`);
+                                        const fieldLabel = String(field.label || fieldName);
+                                        const fieldType = String(field.type || 'text').toLowerCase();
+
+                                        return (
+                                            <Grid item xs={12} sm={fieldType === 'textarea' ? 12 : 6} key={fieldName}>
+                                                <TextField
+                                                    label={fieldLabel}
+                                                    type={['text', 'number', 'tel', 'date', 'email'].includes(fieldType) ? fieldType : 'text'}
+                                                    name={fieldName}
+                                                    value={formData[fieldName] || ''}
+                                                    onChange={handleChange}
+                                                    fullWidth
+                                                    margin="normal"
+                                                    InputLabelProps={fieldType === 'date' ? { shrink: true } : {}}
+                                                    multiline={fieldType === 'textarea'}
+                                                    rows={fieldType === 'textarea' ? 4 : 1}
+                                                />
+                                            </Grid>
+                                        );
+                                    } catch (e) {
+                                        console.error(`Error rendering field ${fIdx}:`, e);
+                                        return null;
+                                    }
+                                })}
+                            </Grid>
+                        </Paper>
+                    );
+                } catch (e) {
+                    console.error(`Error rendering section ${sIdx}:`, e);
+                    return <Typography key={sIdx} color="error">Error rendering section {sIdx}</Typography>;
+                }
+            })}
+
+            <Button type="submit" variant="contained" color="primary" sx={{ mt: 3 }}>
+                Submit Intake Form
+            </Button>
+        </Box>
+    );
+};
+
+export default DynamicForm;

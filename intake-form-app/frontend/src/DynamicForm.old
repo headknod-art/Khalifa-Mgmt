@@ -1,0 +1,485 @@
+import React, { useState, useEffect } from 'react';
+import {
+    Box,
+    Button,
+    TextField,
+    RadioGroup,
+    FormControlLabel,
+    Radio,
+    Checkbox,
+    FormGroup,
+    FormControl,
+    FormLabel,
+    Paper,
+    Typography,
+    Grid,
+    IconButton,
+    Select,
+    MenuItem,
+    InputLabel
+} from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+
+const DynamicForm = ({ config, onSubmit }) => {
+    const [formData, setFormData] = useState({});
+    const [repeatableSections, setRepeatableSections] = useState({});
+
+    useEffect(() => {
+        const initialRepeatable = {};
+        if (Array.isArray(config)) {
+            config.forEach(section => {
+                if (section && section.repeatable) {
+                    initialRepeatable[section.sectionTitle] = 1;
+                }
+            });
+        }
+        setRepeatableSections(initialRepeatable);
+    }, [config]);
+
+    // Safe string conversion
+    const safeString = (value) => {
+        if (value === null || value === undefined) return '';
+        if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+            return String(value);
+        }
+        // If it's an object (could be React element), try to extract useful info
+        if (typeof value === 'object') {
+            if (value.$$typeof) {
+                console.warn('Encountered React element in text content:', value);
+                return '';
+            }
+            try {
+                return JSON.stringify(value);
+            } catch (e) {
+                return '';
+            }
+        }
+        return '';
+    };
+
+    const handleChange = (e, sectionTitle, index = null) => {
+        const { name, value, type, checked } = e.target;
+        const fieldValue = type === 'checkbox' ? checked : value;
+
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            if (index !== null) {
+                if (!newData[sectionTitle]) {
+                    newData[sectionTitle] = [];
+                }
+                if (!newData[sectionTitle][index]) {
+                    newData[sectionTitle][index] = {};
+                }
+                newData[sectionTitle][index][name] = fieldValue;
+            } else {
+                newData[name] = fieldValue;
+            }
+            return newData;
+        });
+    };
+
+    const handleCheckboxChange = (e, fieldName, optionValue, sectionTitle, index = null) => {
+        const { checked } = e.target;
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            let targetArray;
+
+            if (index !== null) {
+                if (!newData[sectionTitle]) newData[sectionTitle] = [];
+                if (!newData[sectionTitle][index]) newData[sectionTitle][index] = {};
+                if (!newData[sectionTitle][index][fieldName]) newData[sectionTitle][index][fieldName] = [];
+                targetArray = newData[sectionTitle][index][fieldName];
+            } else {
+                if (!newData[fieldName]) newData[fieldName] = [];
+                targetArray = newData[fieldName];
+            }
+
+            if (checked) {
+                if (!targetArray.includes(optionValue)) {
+                    targetArray.push(optionValue);
+                }
+            } else {
+                const idx = targetArray.indexOf(optionValue);
+                if (idx > -1) {
+                    targetArray.splice(idx, 1);
+                }
+            }
+            return newData;
+        });
+    };
+
+    const addRepeatableSection = (sectionTitle) => {
+        setRepeatableSections(prev => ({
+            ...prev,
+            [sectionTitle]: (prev[sectionTitle] || 0) + 1
+        }));
+    };
+
+    const removeRepeatableSection = (sectionTitle) => {
+        let newCount;
+        setRepeatableSections(prev => {
+            newCount = Math.max(1, (prev[sectionTitle] || 0) - 1);
+            return {
+                ...prev,
+                [sectionTitle]: newCount
+            };
+        });
+        setFormData(prevData => {
+            const newData = { ...prevData };
+            if (newData[sectionTitle] && newData[sectionTitle].length > newCount) {
+                newData[sectionTitle].pop();
+            }
+            return newData;
+        });
+    };
+
+    const isFieldVisible = (field, currentFormData, sectionTitle = null, index = null) => {
+        if (!field || !field.dependency) return true;
+
+        const { field: dependentField, value, values } = field.dependency;
+        let dependentFieldValue;
+
+        if (sectionTitle !== null && index !== null) {
+            dependentFieldValue = (currentFormData[sectionTitle]?.[index] || {})[dependentField];
+        } else {
+            dependentFieldValue = currentFormData[dependentField];
+        }
+
+        if (values && Array.isArray(values)) {
+            return values.includes(dependentFieldValue);
+        }
+        return dependentFieldValue === value;
+    };
+
+    const renderField = (field, sectionTitle, index = null) => {
+        try {
+            if (!field || typeof field !== 'object') {
+                return null;
+            }
+
+            const fieldName = field.name;
+            if (!fieldName) return null;
+
+            let value = '';
+            if (index !== null) {
+                value = (formData[sectionTitle]?.[index] || {})[fieldName] || '';
+            } else {
+                value = formData[fieldName] || '';
+            }
+
+            if (!isFieldVisible(field, formData, sectionTitle, index)) {
+                return null;
+            }
+
+            const helperText = safeString(field.description);
+            const fieldType = String(field.type || '').toLowerCase();
+
+            console.log(`Rendering field: ${fieldName}, type: ${fieldType}`);
+
+            switch (fieldType) {
+                case 'text':
+                case 'number':
+                case 'tel':
+                case 'date':
+                case 'email':
+                    return (
+                        <TextField
+                            key={fieldName}
+                            label={safeString(field.label)}
+                            type={fieldType}
+                            name={fieldName}
+                            value={value}
+                            onChange={(e) => handleChange(e, sectionTitle, index)}
+                            fullWidth
+                            margin="normal"
+                            InputLabelProps={fieldType === 'date' ? { shrink: true } : {}}
+                            helperText={helperText}
+                        />
+                    );
+
+                case 'textarea':
+                    return (
+                        <TextField
+                            key={fieldName}
+                            label={safeString(field.label)}
+                            name={fieldName}
+                            value={value}
+                            onChange={(e) => handleChange(e, sectionTitle, index)}
+                            fullWidth
+                            margin="normal"
+                            multiline
+                            rows={4}
+                            helperText={helperText}
+                        />
+                    );
+
+                case 'radio':
+                    return (
+                        <FormControl component="fieldset" margin="normal" fullWidth key={fieldName}>
+                            <FormLabel component="legend">{safeString(field.label)}</FormLabel>
+                            <RadioGroup
+                                row
+                                name={fieldName}
+                                value={value}
+                                onChange={(e) => handleChange(e, sectionTitle, index)}
+                            >
+                                {Array.isArray(field.options) && field.options.map((option, idx) => {
+                                    if (!option || typeof option !== 'object') return null;
+                                    const optionLabel = safeString(option.label || option.value);
+                                    const optionValue = safeString(option.value);
+                                    if (!optionValue) return null;
+                                    return (
+                                        <FormControlLabel
+                                            key={`${fieldName}-${idx}-${optionValue}`}
+                                            value={optionValue}
+                                            control={<Radio />}
+                                            label={optionLabel}
+                                        />
+                                    );
+                                })}
+                            </RadioGroup>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                case 'checkbox':
+                    return (
+                        <FormControl component="fieldset" margin="normal" fullWidth key={fieldName}>
+                            <FormLabel component="legend">{safeString(field.label)}</FormLabel>
+                            <FormGroup row>
+                                {Array.isArray(field.options) && field.options.map((option, idx) => {
+                                    if (!option || typeof option !== 'object') return null;
+                                    const optionLabel = safeString(option.label || option.value);
+                                    const optionValue = safeString(option.value);
+                                    if (!optionValue) return null;
+                                    return (
+                                        <FormControlLabel
+                                            key={`${fieldName}-${idx}-${optionValue}`}
+                                            control={
+                                                <Checkbox
+                                                    checked={(index !== null
+                                                        ? (formData[sectionTitle]?.[index]?.[fieldName] || [])
+                                                        : (formData[fieldName] || [])).includes(optionValue)}
+                                                    onChange={(e) => handleCheckboxChange(e, fieldName, optionValue, sectionTitle, index)}
+                                                    name={fieldName}
+                                                />
+                                            }
+                                            label={optionLabel}
+                                        />
+                                    );
+                                })}
+                            </FormGroup>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                case 'select':
+                    return (
+                        <FormControl fullWidth margin="normal" key={fieldName}>
+                            <InputLabel>{safeString(field.label)}</InputLabel>
+                            <Select
+                                name={fieldName}
+                                value={value}
+                                label={safeString(field.label)}
+                                onChange={(e) => handleChange(e, sectionTitle, index)}
+                            >
+                                {Array.isArray(field.options) && field.options.map((option, idx) => {
+                                    if (!option || typeof option !== 'object') return null;
+                                    const optionLabel = safeString(option.label || option.value);
+                                    const optionValue = safeString(option.value);
+                                    if (!optionValue) return null;
+                                    return (
+                                        <MenuItem key={`${fieldName}-${idx}-${optionValue}`} value={optionValue}>
+                                            {optionLabel}
+                                        </MenuItem>
+                                    );
+                                })}
+                            </Select>
+                            {helperText && <Typography variant="caption" color="textSecondary">{helperText}</Typography>}
+                        </FormControl>
+                    );
+
+                default:
+                    console.warn(`Unknown field type: ${fieldType}`);
+                    return <Typography color="error">Unknown field type: {safeString(fieldType)}</Typography>;
+            }
+        } catch (error) {
+            console.error('Error rendering field:', field, error);
+            return (
+                <Typography color="error" key={field?.name || 'error'}>
+                    Error rendering field: {safeString(field?.name || 'unknown')}
+                </Typography>
+            );
+        }
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onSubmit(formData);
+    };
+
+    // Recursive function to check and clean config
+    const cleanConfig = (obj) => {
+        if (obj === null || obj === undefined) return obj;
+        if (typeof obj !== 'object') return obj;
+        if (obj.$$typeof) {
+            console.error('Found React element where it should not be:', obj);
+            return null;
+        }
+        if (Array.isArray(obj)) {
+            return obj.map(item => cleanConfig(item));
+        }
+        if (typeof obj === 'object') {
+            const cleaned = {};
+            for (const key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    const value = obj[key];
+                    if (value && value.$$typeof) {
+                        console.error(`Found React element in ${key}:`, value);
+                        cleaned[key] = null;
+                    } else if (typeof value === 'object') {
+                        cleaned[key] = cleanConfig(value);
+                    } else {
+                        cleaned[key] = value;
+                    }
+                }
+            }
+            return cleaned;
+        }
+        return obj;
+    };
+
+    const cleanedConfig = cleanConfig(config);
+
+    if (!Array.isArray(cleanedConfig) || cleanedConfig.length === 0) {
+        return <Typography color="error">No form configuration provided</Typography>;
+    }
+
+    // Debug: log config structure
+    console.log('Form config received:', cleanedConfig);
+    console.log('First section:', cleanedConfig[0]);
+    if (cleanedConfig[0] && cleanedConfig[0].fields) {
+        console.log('First field:', cleanedConfig[0].fields[0]);
+    }
+
+    try {
+        return (
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                {cleanedConfig.map(section => {
+                if (!section || !section.sectionTitle) return null;
+
+                return (
+                    <Paper elevation={2} sx={{ p: 3, mb: 4 }} key={section.sectionTitle}>
+                        <Typography variant="h5" gutterBottom>
+                            {(() => {
+                                const title = safeString(section.sectionTitle);
+                                console.log('Rendering section title:', typeof title, title);
+                                return title;
+                            })()}
+                        </Typography>
+                        {section.description && (
+                            <Typography variant="body2" color="textSecondary" sx={{ mb: 2 }}>
+                                {(() => {
+                                    const desc = safeString(section.description);
+                                    console.log('Rendering section description:', typeof desc, desc);
+                                    return desc;
+                                })()}
+                            </Typography>
+                        )}
+
+                        {section.repeatable ? (
+                            [...Array(repeatableSections[section.sectionTitle] || 0)].map((_, index) => (
+                                <Box key={`${section.sectionTitle}-${index}`} sx={{ mb: 3, p: 2, border: '1px solid #eee', borderRadius: '4px' }}>
+                                    <Grid container spacing={2} alignItems="center">
+                                        <Grid item xs>
+                                            <Typography variant="h6" color="primary">
+                                                {safeString(section.sectionTitle)} {index + 1}
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item>
+                                            <IconButton
+                                                color="error"
+                                                onClick={() => removeRepeatableSection(section.sectionTitle)}
+                                                disabled={repeatableSections[section.sectionTitle] <= 1}
+                                            >
+                                                <RemoveIcon />
+                                            </IconButton>
+                                            {(section.maxInstances === undefined || repeatableSections[section.sectionTitle] < section.maxInstances) && (
+                                                <IconButton color="primary" onClick={() => addRepeatableSection(section.sectionTitle)}>
+                                                    <AddIcon />
+                                                </IconButton>
+                                            )}
+                                        </Grid>
+                                    </Grid>
+                                    <Grid container spacing={2}>
+                                        {Array.isArray(section.fields) && section.fields.map(field => {
+                                            if (!field || !field.name) return null;
+                                            try {
+                                                const rendered = renderField(field, section.sectionTitle, index);
+                                                // Only render if it's a valid React element or null
+                                                if (rendered === null) return null;
+                                                if (typeof rendered !== 'object' || !rendered.$$typeof) {
+                                                    console.warn('renderField did not return a React element for', field.name);
+                                                    return null;
+                                                }
+                                                return (
+                                                    <Grid item xs={12} sm={field.type === 'textarea' ? 12 : 6} key={field.name}>
+                                                        {rendered}
+                                                    </Grid>
+                                                );
+                                            } catch (e) {
+                                                console.error('Error rendering field grid item:', field.name, e);
+                                                return null;
+                                            }
+                                        })}
+                                    </Grid>
+                                </Box>
+                            ))
+                        ) : (
+                            <Grid container spacing={2}>
+                                {Array.isArray(section.fields) && section.fields.map(field => {
+                                    if (!field || !field.name) return null;
+                                    try {
+                                        const rendered = renderField(field);
+                                        // Only render if it's a valid React element or null
+                                        if (rendered === null) return null;
+                                        if (typeof rendered !== 'object' || !rendered.$$typeof) {
+                                            console.warn('renderField did not return a React element for', field.name);
+                                            return null;
+                                        }
+                                        return (
+                                            <Grid item xs={12} sm={field.type === 'textarea' ? 12 : 6} key={field.name}>
+                                                {rendered}
+                                            </Grid>
+                                        );
+                                    } catch (e) {
+                                        console.error('Error rendering field grid item:', field.name, e);
+                                        return null;
+                                    }
+                                })}
+                            </Grid>
+                        )}
+                    </Paper>
+                );
+            })}
+            <Button type="submit" variant="contained" color="primary" sx={{ mt: 3 }}>
+                Submit Intake Form
+            </Button>
+        </Box>
+        );
+    } catch (error) {
+        console.error('Error rendering form:', error);
+        return (
+            <Box sx={{ p: 3 }}>
+                <Typography color="error" variant="h6">Error rendering form</Typography>
+                <Typography color="error" variant="body2">{String(error.message)}</Typography>
+                <Typography component="pre" variant="caption" sx={{ mt: 2, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+                    {String(error.stack)}
+                </Typography>
+            </Box>
+        );
+    }
+};
+
+export default DynamicForm;

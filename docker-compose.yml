@@ -1,0 +1,130 @@
+services:
+  # ============================================
+  # Khalifa Management System
+  # ============================================
+  
+  khalifa-mongo:
+    image: mongo:latest
+    container_name: khalifa-mgmt-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - khalifa-mongo-data:/data/db
+    networks:
+      - khalifa-network
+    restart: unless-stopped
+    healthcheck:
+      test: mongosh --eval 'db.adminCommand("ping")'
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  khalifa-app:
+    build:
+      context: ./khalifa-mgmt
+      dockerfile: Dockerfile
+      args:
+        - MONGODB_URI=mongodb://khalifa-mongo:27017/khalifa-mgmt
+    container_name: khalifa-mgmt-app
+    ports:
+      - "3005:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://khalifa-mongo:27017/khalifa-mgmt
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-khalifa_super_secret_random_string_development_only}
+      - NEXT_PUBLIC_API_URL=http://localhost:3005
+      - STIRLING_PDF_URL=http://stirling-pdf:8080
+      - NEXT_PUBLIC_STIRLING_PDF_URL=http://localhost:8080
+    depends_on:
+      khalifa-mongo:
+        condition: service_healthy
+    networks:
+      - khalifa-network
+    restart: unless-stopped
+
+  # ============================================
+  # Intake Form Application
+  # ============================================
+
+  intake-mongo:
+    image: mongo:latest
+    container_name: intake-form-app-mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - intake-mongo-data:/data/db
+    networks:
+      - intake-network
+    restart: unless-stopped
+    healthcheck:
+      test: mongosh --eval 'db.adminCommand("ping")'
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  intake-backend:
+    build: ./intake-form-app/backend
+    container_name: intake-form-app-backend
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./intake-form-app/backend/intake.db:/usr/src/app/intake.db
+    networks:
+      - intake-network
+    environment:
+      - MONGODB_URI=mongodb://intake-mongo:27017/khalifa_intake
+      - PORT=5000
+      - NODE_ENV=production
+      - CORS_ORIGIN=http://localhost:3006
+    depends_on:
+      intake-mongo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  intake-frontend:
+    build: ./intake-form-app/frontend
+    container_name: intake-form-app-frontend
+    ports:
+      - "3006:3000"
+    depends_on:
+      - intake-backend
+    networks:
+      - intake-network
+    environment:
+      - WATCHPACK_POLLING=true
+      - REACT_APP_API_URL=http://localhost:5001
+    restart: unless-stopped
+
+  # ============================================
+  # Stirling PDF Service
+  # ============================================
+  
+  stirling-pdf:
+    image: frooodle/s-pdf:latest
+    container_name: stirling-pdf
+    ports:
+      - "8080:8080"
+    environment:
+      - LANGS=en_GB
+      - ALLOW_EXTERNAL_REQUESTS=true
+      - GOOGLE_ANALYTICS_ENABLED=false
+      - METRICS_ENABLED=false
+      - SECURITY_ENABLELOGIN=false
+    networks:
+      - khalifa-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  khalifa-network:
+    driver: bridge
+  intake-network:
+    driver: bridge
+
+volumes:
+  khalifa-mongo-data:
+  intake-mongo-data:
